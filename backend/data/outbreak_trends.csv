@@ -1,0 +1,541 @@
+date,disease_type,daily_cases,ward_beds_occupied,outbreak_detected
+2026-05-02,Viral Fever,5,26,0
+2026-05-02,Gastroenteritis,1,21,0
+2026-05-02,Respiratory Infection,7,18,0
+2026-05-03,Viral Fever,4,27,0
+2026-05-03,Gastroenteritis,3,20,0
+2026-05-03,Respiratory Infection,5,28,0
+2026-05-04,Viral Fever,7,17,0
+2026-05-04,Gastroenteritis,7,21,0
+2026-05-04,Respiratory Infection,2,12,0
+2026-05-05,Viral Fever,4,22,0
+2026-05-05,Gastroenteritis,7,21,0
+2026-05-05,Respiratory Infection,6,26,0
+2026-05-06,Viral Fever,7,19,0
+2026-05-06,Gastroenteritis,3,19,0
+2026-05-06,Respiratory Infection,7,23,0
+2026-05-07,Viral Fever,2,13,0
+2026-05-07,Gastroenteritis,3,24,0
+2026-05-07,Respiratory Infection,5,18,0
+2026-05-08,Viral Fever,7,23,0
+2026-05-08,Gastroenteritis,3,17,0
+2026-05-08,Respiratory Infection,2,12,0
+2026-05-09,Viral Fever,1,23,0
+2026-05-09,Gastroenteritis,4,21,0
+2026-05-09,Respiratory Infection,5,26,0
+2026-05-10,Viral Fever,7,30,0
+2026-05-10,Gastroenteritis,4,14,0
+2026-05-10,Respiratory Infection,2,22,0
+2026-05-11,Viral Fever,7,18,0
+2026-05-11,Gastroenteritis,3,26,0
+2026-05-11,Respiratory Infection,1,17,0
+2026-05-12,Viral Fever,3,18,0
+2026-05-12,Gastroenteritis,7,28,0
+2026-05-12,Respiratory Infection,5,21,0
+2026-05-13,Viral Fever,7,19,0
+2026-05-13,Gastroenteritis,2,20,0
+2026-05-13,Respiratory Infection,1,25,0
+2026-05-14,Viral Fever,7,30,0
+2026-05-14,Gastroenteritis,5,18,0
+2026-05-14,Respiratory Infection,7,20,0
+2026-05-15,Viral Fever,1,14,0
+2026-05-15,Gastroenteritis,7,23,0
+2026-05-15,Respiratory Infection,6,20,0
+2026-05-16,Viral Fever,1,14,0
+2026-05-16,Gastroenteritis,3,15,0
+2026-05-16,Respiratory Infection,6,19,0
+2026-05-17,Viral Fever,3,25,0
+2026-05-17,Gastroenteritis,2,16,0
+2026-05-17,Respiratory Infection,6,28,0
+2026-05-18,Viral Fever,4,28,0
+2026-05-18,Gastroenteritis,5,26,0
+2026-05-18,Respiratory Infection,1,14,0
+2026-05-19,Viral Fever,6,19,0
+2026-05-19,Gastroenteritis,1,25,0
+2026-05-19,Respiratory Infection,2,17,0
+2026-05-20,Viral Fever,1,14,0
+2026-05-20,Gastroenteritis,6,18,0
+2026-05-20,Respiratory Infection,4,22,0
+2026-05-21,Viral Fever,4,28,0
+2026-05-21,Gastroenteritis,1,23,0
+2026-05-21,Respiratory Infection,2,21,0
+2026-05-22,Viral Fever,6,24,0
+2026-05-22,Gastroenteritis,2,14,0
+2026-05-22,Respiratory Infection,6,18,0
+2026-05-23,Viral Fever,2,20,0
+2026-05-23,Gastroenteritis,6,18,0
+2026-05-23,Respiratory Infection,7,26,0
+2026-05-24,Viral Fever,4,24,0
+2026-05-24,Gastroenteritis,5,20,0
+2026-05-24,Respiratory Infection,3,26,0
+2026-05-25,Viral Fever,2,19,0
+2026-05-25,Gastroenteritis,2,17,0
+2026-05-25,Respiratory Infection,2,20,0
+2026-05-26,Viral Fever,6,24,0
+2026-05-26,Gastroenteritis,6,19,0
+2026-05-26,Respiratory Infection,4,16,0
+2026-05-27,Viral Fever,2,19,0
+2026-05-27,Gastroenteritis,4,15,0
+2026-05-27,Respiratory Infection,3,21,0
+2026-05-28,Viral Fever,4,21,0
+2026-05-28,Gastroenteritis,5,22,0
+2026-05-28,Respiratory Infection,5,27,0
+2026-05-29,Viral Fever,7,21,0
+2026-05-29,Gastroenteritis,5,19,0
+2026-05-29,Respiratory Infection,5,18,0
+2026-05-30,Viral Fever,5,28,0
+2026-05-30,Gastroenteritis,6,20,0
+2026-05-30,Respiratory Infection,7,19,0
+2026-05-31,Viral Fever,4,21,0
+2026-05-31,Gastroenteritis,6,23,0
+2026-05-31,Respiratory Infection,3,14,0
+2026-06-01,Viral Fever,5,23,0
+2026-06-01,Gastroenteritis,7,31,0
+2026-06-01,Respiratory Infection,7,29,0
+2026-06-02,Viral Fever,5,25,0
+2026-06-02,Gastroenteritis,7,31,0
+2026-06-02,Respiratory Infection,7,18,0
+2026-06-03,Viral Fever,3,16,0
+2026-06-03,Gastroenteritis,7,18,0
+2026-06-03,Respiratory Infection,6,25,0
+2026-06-04,Viral Fever,2,22,0
+2026-06-04,Gastroenteritis,5,27,0
+2026-06-04,Respiratory Infection,5,22,0
+2026-06-05,Viral Fever,5,27,0
+2026-06-05,Gastroenteritis,4,14,0
+2026-06-05,Respiratory Infection,6,17,0
+2026-06-06,Viral Fever,1,22,0
+2026-06-06,Gastroenteritis,7,31,0
+2026-06-06,Respiratory Infection,5,21,0
+2026-06-07,Viral Fever,4,27,0
+2026-06-07,Gastroenteritis,6,19,0
+2026-06-07,Respiratory Infection,7,17,0
+2026-06-08,Viral Fever,2,22,0
+2026-06-08,Gastroenteritis,3,18,0
+2026-06-08,Respiratory Infection,2,24,0
+2026-06-09,Viral Fever,4,28,0
+2026-06-09,Gastroenteritis,5,20,0
+2026-06-09,Respiratory Infection,4,16,0
+2026-06-10,Viral Fever,6,21,0
+2026-06-10,Gastroenteritis,2,20,0
+2026-06-10,Respiratory Infection,6,16,0
+2026-06-11,Viral Fever,2,17,0
+2026-06-11,Gastroenteritis,7,30,0
+2026-06-11,Respiratory Infection,3,24,0
+2026-06-12,Viral Fever,7,25,0
+2026-06-12,Gastroenteritis,3,19,0
+2026-06-12,Respiratory Infection,6,17,0
+2026-06-13,Viral Fever,5,17,0
+2026-06-13,Gastroenteritis,3,17,0
+2026-06-13,Respiratory Infection,6,26,0
+2026-06-14,Viral Fever,1,24,0
+2026-06-14,Gastroenteritis,1,19,0
+2026-06-14,Respiratory Infection,3,20,0
+2026-06-15,Viral Fever,6,23,0
+2026-06-15,Gastroenteritis,3,23,0
+2026-06-15,Respiratory Infection,6,21,0
+2026-06-16,Viral Fever,6,30,0
+2026-06-16,Gastroenteritis,6,25,0
+2026-06-16,Respiratory Infection,6,28,0
+2026-06-17,Viral Fever,6,26,0
+2026-06-17,Gastroenteritis,5,29,0
+2026-06-17,Respiratory Infection,4,22,0
+2026-06-18,Viral Fever,2,24,0
+2026-06-18,Gastroenteritis,7,17,0
+2026-06-18,Respiratory Infection,2,17,0
+2026-06-19,Viral Fever,7,17,0
+2026-06-19,Gastroenteritis,7,27,0
+2026-06-19,Respiratory Infection,3,18,0
+2026-06-20,Viral Fever,1,16,0
+2026-06-20,Gastroenteritis,6,17,0
+2026-06-20,Respiratory Infection,1,14,0
+2026-06-21,Viral Fever,6,25,0
+2026-06-21,Gastroenteritis,2,20,0
+2026-06-21,Respiratory Infection,5,21,0
+2026-06-22,Viral Fever,6,21,0
+2026-06-22,Gastroenteritis,1,15,0
+2026-06-22,Respiratory Infection,2,19,0
+2026-06-23,Viral Fever,7,27,0
+2026-06-23,Gastroenteritis,6,18,0
+2026-06-23,Respiratory Infection,7,30,0
+2026-06-24,Viral Fever,7,25,0
+2026-06-24,Gastroenteritis,6,20,0
+2026-06-24,Respiratory Infection,6,16,0
+2026-06-25,Viral Fever,7,20,0
+2026-06-25,Gastroenteritis,1,11,0
+2026-06-25,Respiratory Infection,1,19,0
+2026-06-26,Viral Fever,5,20,0
+2026-06-26,Gastroenteritis,5,19,0
+2026-06-26,Respiratory Infection,4,25,0
+2026-06-27,Viral Fever,6,29,0
+2026-06-27,Gastroenteritis,7,25,0
+2026-06-27,Respiratory Infection,5,26,0
+2026-06-28,Viral Fever,3,21,0
+2026-06-28,Gastroenteritis,7,26,0
+2026-06-28,Respiratory Infection,5,15,0
+2026-06-29,Viral Fever,6,16,0
+2026-06-29,Gastroenteritis,2,25,0
+2026-06-29,Respiratory Infection,3,24,0
+2026-06-30,Viral Fever,4,15,0
+2026-06-30,Gastroenteritis,7,18,0
+2026-06-30,Respiratory Infection,7,23,0
+2026-07-01,Viral Fever,4,24,0
+2026-07-01,Gastroenteritis,3,21,0
+2026-07-01,Respiratory Infection,2,21,0
+2026-07-02,Viral Fever,30,42,1
+2026-07-02,Gastroenteritis,6,19,0
+2026-07-02,Respiratory Infection,4,17,0
+2026-07-03,Viral Fever,25,42,1
+2026-07-03,Gastroenteritis,4,14,0
+2026-07-03,Respiratory Infection,6,27,0
+2026-07-04,Viral Fever,22,42,1
+2026-07-04,Gastroenteritis,6,18,0
+2026-07-04,Respiratory Infection,2,17,0
+2026-07-05,Viral Fever,15,35,1
+2026-07-05,Gastroenteritis,5,20,0
+2026-07-05,Respiratory Infection,7,22,0
+2026-07-06,Viral Fever,32,42,1
+2026-07-06,Gastroenteritis,3,17,0
+2026-07-06,Respiratory Infection,3,24,0
+2026-07-07,Viral Fever,19,31,1
+2026-07-07,Gastroenteritis,1,19,0
+2026-07-07,Respiratory Infection,4,28,0
+2026-07-08,Viral Fever,27,42,1
+2026-07-08,Gastroenteritis,5,19,0
+2026-07-08,Respiratory Infection,5,19,0
+2026-07-09,Viral Fever,16,28,1
+2026-07-09,Gastroenteritis,6,28,0
+2026-07-09,Respiratory Infection,7,22,0
+2026-07-10,Viral Fever,21,42,1
+2026-07-10,Gastroenteritis,7,22,0
+2026-07-10,Respiratory Infection,7,27,0
+2026-07-11,Viral Fever,18,34,1
+2026-07-11,Gastroenteritis,4,20,0
+2026-07-11,Respiratory Infection,5,16,0
+2026-07-12,Viral Fever,22,41,1
+2026-07-12,Gastroenteritis,3,14,0
+2026-07-12,Respiratory Infection,6,19,0
+2026-07-13,Viral Fever,15,30,1
+2026-07-13,Gastroenteritis,4,25,0
+2026-07-13,Respiratory Infection,3,26,0
+2026-07-14,Viral Fever,29,42,1
+2026-07-14,Gastroenteritis,2,12,0
+2026-07-14,Respiratory Infection,1,25,0
+2026-07-15,Viral Fever,32,42,1
+2026-07-15,Gastroenteritis,7,21,0
+2026-07-15,Respiratory Infection,2,16,0
+2026-07-16,Viral Fever,1,16,0
+2026-07-16,Gastroenteritis,3,24,0
+2026-07-16,Respiratory Infection,6,16,0
+2026-07-17,Viral Fever,1,19,0
+2026-07-17,Gastroenteritis,4,26,0
+2026-07-17,Respiratory Infection,3,26,0
+2026-07-18,Viral Fever,6,26,0
+2026-07-18,Gastroenteritis,3,25,0
+2026-07-18,Respiratory Infection,6,25,0
+2026-07-19,Viral Fever,2,19,0
+2026-07-19,Gastroenteritis,3,21,0
+2026-07-19,Respiratory Infection,1,14,0
+2026-07-20,Viral Fever,2,12,0
+2026-07-20,Gastroenteritis,7,27,0
+2026-07-20,Respiratory Infection,4,23,0
+2026-07-21,Viral Fever,4,14,0
+2026-07-21,Gastroenteritis,3,19,0
+2026-07-21,Respiratory Infection,3,15,0
+2026-07-22,Viral Fever,1,17,0
+2026-07-22,Gastroenteritis,7,21,0
+2026-07-22,Respiratory Infection,6,29,0
+2026-07-23,Viral Fever,3,26,0
+2026-07-23,Gastroenteritis,5,17,0
+2026-07-23,Respiratory Infection,5,16,0
+2026-07-24,Viral Fever,6,22,0
+2026-07-24,Gastroenteritis,2,22,0
+2026-07-24,Respiratory Infection,7,28,0
+2026-07-25,Viral Fever,4,14,0
+2026-07-25,Gastroenteritis,2,13,0
+2026-07-25,Respiratory Infection,4,16,0
+2026-07-26,Viral Fever,7,23,0
+2026-07-26,Gastroenteritis,7,17,0
+2026-07-26,Respiratory Infection,2,19,0
+2026-07-27,Viral Fever,1,20,0
+2026-07-27,Gastroenteritis,5,21,0
+2026-07-27,Respiratory Infection,5,15,0
+2026-07-28,Viral Fever,7,31,0
+2026-07-28,Gastroenteritis,4,17,0
+2026-07-28,Respiratory Infection,2,19,0
+2026-07-29,Viral Fever,6,28,0
+2026-07-29,Gastroenteritis,5,15,0
+2026-07-29,Respiratory Infection,7,22,0
+2026-07-30,Viral Fever,1,14,0
+2026-07-30,Gastroenteritis,4,21,0
+2026-07-30,Respiratory Infection,6,29,0
+2026-07-31,Viral Fever,4,16,0
+2026-07-31,Gastroenteritis,7,29,0
+2026-07-31,Respiratory Infection,5,23,0
+2026-08-01,Viral Fever,5,23,0
+2026-08-01,Gastroenteritis,6,21,0
+2026-08-01,Respiratory Infection,3,27,0
+2026-08-02,Viral Fever,6,22,0
+2026-08-02,Gastroenteritis,4,24,0
+2026-08-02,Respiratory Infection,4,17,0
+2026-08-03,Viral Fever,1,25,0
+2026-08-03,Gastroenteritis,4,20,0
+2026-08-03,Respiratory Infection,3,22,0
+2026-08-04,Viral Fever,6,16,0
+2026-08-04,Gastroenteritis,7,22,0
+2026-08-04,Respiratory Infection,4,17,0
+2026-08-05,Viral Fever,5,22,0
+2026-08-05,Gastroenteritis,7,24,0
+2026-08-05,Respiratory Infection,1,11,0
+2026-08-06,Viral Fever,3,14,0
+2026-08-06,Gastroenteritis,3,23,0
+2026-08-06,Respiratory Infection,3,14,0
+2026-08-07,Viral Fever,3,18,0
+2026-08-07,Gastroenteritis,1,12,0
+2026-08-07,Respiratory Infection,4,18,0
+2026-08-08,Viral Fever,5,29,0
+2026-08-08,Gastroenteritis,6,16,0
+2026-08-08,Respiratory Infection,5,20,0
+2026-08-09,Viral Fever,6,20,0
+2026-08-09,Gastroenteritis,5,20,0
+2026-08-09,Respiratory Infection,6,19,0
+2026-08-10,Viral Fever,5,25,0
+2026-08-10,Gastroenteritis,6,24,0
+2026-08-10,Respiratory Infection,1,25,0
+2026-08-11,Viral Fever,6,16,0
+2026-08-11,Gastroenteritis,4,20,0
+2026-08-11,Respiratory Infection,4,19,0
+2026-08-12,Viral Fever,7,29,0
+2026-08-12,Gastroenteritis,3,17,0
+2026-08-12,Respiratory Infection,1,18,0
+2026-08-13,Viral Fever,7,19,0
+2026-08-13,Gastroenteritis,1,21,0
+2026-08-13,Respiratory Infection,6,25,0
+2026-08-14,Viral Fever,4,20,0
+2026-08-14,Gastroenteritis,4,20,0
+2026-08-14,Respiratory Infection,6,16,0
+2026-08-15,Viral Fever,1,12,0
+2026-08-15,Gastroenteritis,5,29,0
+2026-08-15,Respiratory Infection,3,26,0
+2026-08-16,Viral Fever,2,17,0
+2026-08-16,Gastroenteritis,2,12,0
+2026-08-16,Respiratory Infection,1,23,0
+2026-08-17,Viral Fever,7,23,0
+2026-08-17,Gastroenteritis,6,21,0
+2026-08-17,Respiratory Infection,5,23,0
+2026-08-18,Viral Fever,4,18,0
+2026-08-18,Gastroenteritis,2,12,0
+2026-08-18,Respiratory Infection,6,21,0
+2026-08-19,Viral Fever,3,23,0
+2026-08-19,Gastroenteritis,4,27,0
+2026-08-19,Respiratory Infection,1,16,0
+2026-08-20,Viral Fever,6,25,0
+2026-08-20,Gastroenteritis,4,23,0
+2026-08-20,Respiratory Infection,7,24,0
+2026-08-21,Viral Fever,3,22,0
+2026-08-21,Gastroenteritis,3,27,0
+2026-08-21,Respiratory Infection,5,29,0
+2026-08-22,Viral Fever,3,26,0
+2026-08-22,Gastroenteritis,7,19,0
+2026-08-22,Respiratory Infection,7,22,0
+2026-08-23,Viral Fever,4,19,0
+2026-08-23,Gastroenteritis,7,24,0
+2026-08-23,Respiratory Infection,6,21,0
+2026-08-24,Viral Fever,4,22,0
+2026-08-24,Gastroenteritis,7,25,0
+2026-08-24,Respiratory Infection,7,19,0
+2026-08-25,Viral Fever,5,15,0
+2026-08-25,Gastroenteritis,3,24,0
+2026-08-25,Respiratory Infection,1,11,0
+2026-08-26,Viral Fever,6,22,0
+2026-08-26,Gastroenteritis,6,26,0
+2026-08-26,Respiratory Infection,6,23,0
+2026-08-27,Viral Fever,3,14,0
+2026-08-27,Gastroenteritis,7,26,0
+2026-08-27,Respiratory Infection,5,29,0
+2026-08-28,Viral Fever,1,12,0
+2026-08-28,Gastroenteritis,3,18,0
+2026-08-28,Respiratory Infection,6,16,0
+2026-08-29,Viral Fever,7,24,0
+2026-08-29,Gastroenteritis,2,16,0
+2026-08-29,Respiratory Infection,5,19,0
+2026-08-30,Viral Fever,5,28,0
+2026-08-30,Gastroenteritis,6,21,0
+2026-08-30,Respiratory Infection,7,24,0
+2026-08-31,Viral Fever,3,25,0
+2026-08-31,Gastroenteritis,4,27,0
+2026-08-31,Respiratory Infection,5,24,0
+2026-09-01,Viral Fever,7,25,0
+2026-09-01,Gastroenteritis,6,21,0
+2026-09-01,Respiratory Infection,2,12,0
+2026-09-02,Viral Fever,3,20,0
+2026-09-02,Gastroenteritis,6,16,0
+2026-09-02,Respiratory Infection,4,19,0
+2026-09-03,Viral Fever,5,29,0
+2026-09-03,Gastroenteritis,2,12,0
+2026-09-03,Respiratory Infection,2,16,0
+2026-09-04,Viral Fever,3,19,0
+2026-09-04,Gastroenteritis,5,22,0
+2026-09-04,Respiratory Infection,3,22,0
+2026-09-05,Viral Fever,3,26,0
+2026-09-05,Gastroenteritis,3,15,0
+2026-09-05,Respiratory Infection,6,26,0
+2026-09-06,Viral Fever,6,21,0
+2026-09-06,Gastroenteritis,7,19,0
+2026-09-06,Respiratory Infection,6,24,0
+2026-09-07,Viral Fever,3,20,0
+2026-09-07,Gastroenteritis,3,25,0
+2026-09-07,Respiratory Infection,5,21,0
+2026-09-08,Viral Fever,7,24,0
+2026-09-08,Gastroenteritis,7,29,0
+2026-09-08,Respiratory Infection,3,20,0
+2026-09-09,Viral Fever,5,15,0
+2026-09-09,Gastroenteritis,2,16,0
+2026-09-09,Respiratory Infection,6,20,0
+2026-09-10,Viral Fever,1,16,0
+2026-09-10,Gastroenteritis,6,21,0
+2026-09-10,Respiratory Infection,6,27,0
+2026-09-11,Viral Fever,4,19,0
+2026-09-11,Gastroenteritis,6,21,0
+2026-09-11,Respiratory Infection,1,15,0
+2026-09-12,Viral Fever,2,26,0
+2026-09-12,Gastroenteritis,6,22,0
+2026-09-12,Respiratory Infection,5,23,0
+2026-09-13,Viral Fever,7,25,0
+2026-09-13,Gastroenteritis,6,30,0
+2026-09-13,Respiratory Infection,3,21,0
+2026-09-14,Viral Fever,3,19,0
+2026-09-14,Gastroenteritis,7,17,0
+2026-09-14,Respiratory Infection,3,23,0
+2026-09-15,Viral Fever,6,29,0
+2026-09-15,Gastroenteritis,7,21,0
+2026-09-15,Respiratory Infection,3,16,0
+2026-09-16,Viral Fever,1,16,0
+2026-09-16,Gastroenteritis,2,26,0
+2026-09-16,Respiratory Infection,1,15,0
+2026-09-17,Viral Fever,5,17,0
+2026-09-17,Gastroenteritis,5,20,0
+2026-09-17,Respiratory Infection,5,15,0
+2026-09-18,Viral Fever,7,28,0
+2026-09-18,Gastroenteritis,4,20,0
+2026-09-18,Respiratory Infection,7,19,0
+2026-09-19,Viral Fever,7,21,0
+2026-09-19,Gastroenteritis,5,26,0
+2026-09-19,Respiratory Infection,7,19,0
+2026-09-20,Viral Fever,5,25,0
+2026-09-20,Gastroenteritis,6,16,0
+2026-09-20,Respiratory Infection,6,28,0
+2026-09-21,Viral Fever,5,27,0
+2026-09-21,Gastroenteritis,4,17,0
+2026-09-21,Respiratory Infection,5,27,0
+2026-09-22,Viral Fever,1,11,0
+2026-09-22,Gastroenteritis,3,27,0
+2026-09-22,Respiratory Infection,3,16,0
+2026-09-23,Viral Fever,2,20,0
+2026-09-23,Gastroenteritis,3,27,0
+2026-09-23,Respiratory Infection,7,17,0
+2026-09-24,Viral Fever,1,16,0
+2026-09-24,Gastroenteritis,2,12,0
+2026-09-24,Respiratory Infection,6,22,0
+2026-09-25,Viral Fever,2,26,0
+2026-09-25,Gastroenteritis,6,22,0
+2026-09-25,Respiratory Infection,6,23,0
+2026-09-26,Viral Fever,2,20,0
+2026-09-26,Gastroenteritis,1,21,0
+2026-09-26,Respiratory Infection,1,17,0
+2026-09-27,Viral Fever,1,11,0
+2026-09-27,Gastroenteritis,3,14,0
+2026-09-27,Respiratory Infection,3,27,0
+2026-09-28,Viral Fever,7,17,0
+2026-09-28,Gastroenteritis,5,15,0
+2026-09-28,Respiratory Infection,3,18,0
+2026-09-29,Viral Fever,6,18,0
+2026-09-29,Gastroenteritis,4,20,0
+2026-09-29,Respiratory Infection,6,28,0
+2026-09-30,Viral Fever,3,26,0
+2026-09-30,Gastroenteritis,6,17,0
+2026-09-30,Respiratory Infection,1,24,0
+2026-10-01,Viral Fever,6,17,0
+2026-10-01,Gastroenteritis,7,27,0
+2026-10-01,Respiratory Infection,3,22,0
+2026-10-02,Viral Fever,2,15,0
+2026-10-02,Gastroenteritis,1,20,0
+2026-10-02,Respiratory Infection,1,24,0
+2026-10-03,Viral Fever,5,25,0
+2026-10-03,Gastroenteritis,2,19,0
+2026-10-03,Respiratory Infection,5,17,0
+2026-10-04,Viral Fever,4,16,0
+2026-10-04,Gastroenteritis,2,19,0
+2026-10-04,Respiratory Infection,5,19,0
+2026-10-05,Viral Fever,5,25,0
+2026-10-05,Gastroenteritis,1,25,0
+2026-10-05,Respiratory Infection,1,21,0
+2026-10-06,Viral Fever,2,14,0
+2026-10-06,Gastroenteritis,1,13,0
+2026-10-06,Respiratory Infection,5,16,0
+2026-10-07,Viral Fever,7,26,0
+2026-10-07,Gastroenteritis,4,20,0
+2026-10-07,Respiratory Infection,3,26,0
+2026-10-08,Viral Fever,6,22,0
+2026-10-08,Gastroenteritis,7,31,0
+2026-10-08,Respiratory Infection,6,20,0
+2026-10-09,Viral Fever,6,18,0
+2026-10-09,Gastroenteritis,4,17,0
+2026-10-09,Respiratory Infection,3,18,0
+2026-10-10,Viral Fever,3,27,0
+2026-10-10,Gastroenteritis,7,19,0
+2026-10-10,Respiratory Infection,7,25,0
+2026-10-11,Viral Fever,4,15,0
+2026-10-11,Gastroenteritis,6,29,0
+2026-10-11,Respiratory Infection,1,23,0
+2026-10-12,Viral Fever,2,21,0
+2026-10-12,Gastroenteritis,2,26,0
+2026-10-12,Respiratory Infection,4,18,0
+2026-10-13,Viral Fever,1,17,0
+2026-10-13,Gastroenteritis,5,20,0
+2026-10-13,Respiratory Infection,1,25,0
+2026-10-14,Viral Fever,4,27,0
+2026-10-14,Gastroenteritis,5,16,0
+2026-10-14,Respiratory Infection,5,28,0
+2026-10-15,Viral Fever,7,31,0
+2026-10-15,Gastroenteritis,4,17,0
+2026-10-15,Respiratory Infection,4,14,0
+2026-10-16,Viral Fever,5,24,0
+2026-10-16,Gastroenteritis,7,18,0
+2026-10-16,Respiratory Infection,3,24,0
+2026-10-17,Viral Fever,6,25,0
+2026-10-17,Gastroenteritis,4,23,0
+2026-10-17,Respiratory Infection,5,25,0
+2026-10-18,Viral Fever,4,22,0
+2026-10-18,Gastroenteritis,1,18,0
+2026-10-18,Respiratory Infection,2,26,0
+2026-10-19,Viral Fever,5,28,0
+2026-10-19,Gastroenteritis,7,20,0
+2026-10-19,Respiratory Infection,3,20,0
+2026-10-20,Viral Fever,5,24,0
+2026-10-20,Gastroenteritis,5,17,0
+2026-10-20,Respiratory Infection,5,18,0
+2026-10-21,Viral Fever,2,22,0
+2026-10-21,Gastroenteritis,2,17,0
+2026-10-21,Respiratory Infection,4,24,0
+2026-10-22,Viral Fever,6,29,0
+2026-10-22,Gastroenteritis,6,18,0
+2026-10-22,Respiratory Infection,2,24,0
+2026-10-23,Viral Fever,5,20,0
+2026-10-23,Gastroenteritis,1,11,0
+2026-10-23,Respiratory Infection,3,22,0
+2026-10-24,Viral Fever,3,14,0
+2026-10-24,Gastroenteritis,4,14,0
+2026-10-24,Respiratory Infection,3,27,0
+2026-10-25,Viral Fever,4,26,0
+2026-10-25,Gastroenteritis,1,20,0
+2026-10-25,Respiratory Infection,6,23,0
+2026-10-26,Viral Fever,5,27,0
+2026-10-26,Gastroenteritis,4,21,0
+2026-10-26,Respiratory Infection,7,24,0
+2026-10-27,Viral Fever,3,26,0
+2026-10-27,Gastroenteritis,3,24,0
+2026-10-27,Respiratory Infection,5,15,0
+2026-10-28,Viral Fever,5,18,0
+2026-10-28,Gastroenteritis,5,20,0
+2026-10-28,Respiratory Infection,5,19,0

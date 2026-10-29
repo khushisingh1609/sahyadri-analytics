@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Shayadri Hospital Brand Colors */
+  --color-hospital-primary: #1F1A67;   /* Deep Indigo / Navy */
+  --color-hospital-secondary: #3B3486; /* Royal Purple-Blue */
+  --color-hospital-accent: #E21A52;    /* Vibrant Pinkish-Red */
+  --color-hospital-cta: #C61A4C;       /* Dark Magenta / Ruby Red */
+  --color-hospital-teal: #00A3E0;      /* Brand Teal */
+  --color-hospital-gold: #FFB81C;      /* Amber Gold */
+  --color-hospital-utility: #3D1766;   /* Utility Purple */
+  --color-hospital-border: #EAEAEA;    /* Utility Border */
+  --color-hospital-charcoal: #2B2B2B;  /* Charcoal Black */
+  --color-hospital-bg: #FFFFFF;        /* Pure White */
+  --color-hospital-light: #F7F5FA;     /* Contact Section Bg */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-hospital-bg);
+    color: var(--color-hospital-charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
