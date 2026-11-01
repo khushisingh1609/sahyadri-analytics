@@ -1,0 +1,4 @@
+prescription_id,uhid,doctor,medication,dosage,status,date
+RX-1001,UHID-7265,Dr. James Wilson,Amoxicillin,500mg - 3x daily for 7 days,PENDING,2026-10-31
+RX-1002,UHID-2685,Dr. Sarah Connor,Lisinopril,10mg - 1x daily,READY,2026-10-31
+RX-1003,UHID-5555,Dr. James Wilson,Metformin,500mg - 2x daily,DISPENSED,2026-10-31

@@ -100,7 +100,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Center: Desktop Navigation (Compact Spacing) */}
+          {/* Center: Desktop Navigation */}
           <nav className="hidden md:flex flex-1 justify-center items-center gap-8">
             {['Home', 'About', 'Departments', 'Contact'].map((item) => (
               <Link 
@@ -167,8 +167,6 @@ export default function HomePage() {
       <main className="flex-grow">
         {/* ================= HERO SECTION ================= */}
         <section id="home" className="w-full max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          
-          {/* Text Content */}
           <div className="w-full lg:w-[45%] flex flex-col items-start">
             <span className="text-hospital-secondary text-xs font-bold tracking-widest uppercase mb-4">
               Compassionate Healthcare
@@ -197,7 +195,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Hero Image */}
           <div className="w-full lg:w-[55%]">
             <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-hospital-border shadow-sm">
               <Image 
@@ -212,10 +209,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ================= DEPARTMENTS SECTION (ACCORDION) ================= */}
+        {/* ================= DEPARTMENTS SECTION ================= */}
         <section id="departments" className="w-full max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-hospital-border">
           <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-            
             <div className="lg:w-[35%] lg:sticky lg:top-32">
               <span className="text-hospital-secondary text-xs font-bold tracking-widest uppercase mb-4 block">
                 Our Expertise
@@ -257,7 +253,6 @@ export default function HomePage() {
                       </svg>
                     </button>
                     
-                    {/* Accordion Content */}
                     <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-8' : 'grid-rows-[0fr] opacity-0'}`}>
                       <div className="overflow-hidden">
                         <div className="pl-[52px] md:pl-[64px] bg-hospital-light p-6 rounded-sm ml-0 md:ml-4">
@@ -279,14 +274,12 @@ export default function HomePage() {
                 );
               })}
             </div>
-
           </div>
         </section>
 
-        {/* ================= MONITOR / CONNECTED CARE SECTION ================= */}
+        {/* ================= ABOUT SECTION ================= */}
         <section id="about" className="w-full max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-hospital-border">
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
-            
             <div className="w-full max-w-[260px] md:max-w-[300px] lg:max-w-[340px] shrink-0 aspect-[4/5] rounded-md border border-hospital-border overflow-hidden shadow-sm">
               <Image 
                 src="/monitor.jpg" 
@@ -315,7 +308,6 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -357,7 +349,6 @@ export default function HomePage() {
       {/* ================= FOOTER ================= */}
       <footer className="w-full bg-hospital-primary pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 mb-16">
-          
           <div className="flex flex-col max-w-xs">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-8 relative bg-white/10 rounded-sm flex items-center justify-center p-1">
@@ -382,6 +373,7 @@ export default function HomePage() {
             <Link href="#home" className="text-gray-300 hover:text-hospital-accent text-[15px] transition-colors">Home</Link>
             <Link href="#about" className="text-gray-300 hover:text-hospital-accent text-[15px] transition-colors">About</Link>
             <Link href="#departments" className="text-gray-300 hover:text-hospital-accent text-[15px] transition-colors">Departments</Link>
+            <Link href="#contact" className="text-gray-300 hover:text-hospital-accent text-[15px] transition-colors">Contact</Link>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -389,7 +381,6 @@ export default function HomePage() {
             <Link href="/login" className="text-gray-300 hover:text-hospital-accent text-[15px] transition-colors">Staff Login</Link>
             <Link href="#contact" className="text-gray-300 hover:text-hospital-accent text-[15px] transition-colors">Contact</Link>
           </div>
-
         </div>
         
         <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
@@ -400,7 +391,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-
     </div>
   );
 }

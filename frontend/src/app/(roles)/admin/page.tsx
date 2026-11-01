@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Download, UserPlus, ArrowUpRight, ArrowDownRight, IndianRupee, Users, Bed, Activity } from "lucide-react";
+import { OutbreakAlert } from "@/app/(roles)/shared/OutbreakAlert";
 
 export default function AdminDashboard() {
   const departments = [
@@ -151,4 +152,5 @@ export default function AdminDashboard() {
       </div>
     </div>
   );
+  <OutbreakAlert/>
 }

@@ -1,0 +1,3 @@
+invoice_id,uhid,subtotal,tax,total,status,date
+INV-2094,UHID-8734,1200.0,60.0,1260.0,PAID,31/10/2026
+INV-2093,UHID-5555,850.0,42.5,892.5,PENDING,31/10/2026

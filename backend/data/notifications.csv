@@ -1,0 +1,5 @@
+notif_id,title,message,source,target,category,priority,unread
+NOTIF-001,Critical Patient Alert,Patient UHID-7265 requires review.,Doctor,Nursing,ALERTS,CRITICAL,True
+NOTIF-002,Lab Result Available,CBC results ready.,Laboratory,Doctor,CLINICAL,IMPORTANT,True
+NOTIF-003,New Registration,New OPD walk-in.,Reception,Admin,OPERATIONS,NORMAL,True
+NOTIF-004,Prescription Ready,RX-1043 ready.,Doctor,Pharmacy,CLINICAL,NORMAL,False

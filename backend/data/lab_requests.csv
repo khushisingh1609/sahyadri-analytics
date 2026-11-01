@@ -1,0 +1,4 @@
+request_id,uhid,doctor,test_name,category,status,is_urgent
+REQ-9012,UHID-2685,REQ: DR. DOE,Complete Blood Count (CBC),Pathology,SAMPLE REQUIRED,False
+REQ-9013,UHID-6393,REQ: DR. DOE,Lipid Panel,Pathology,PROCESSING,False
+REQ-9014,UHID-5555,REQ: DR. SMITH,Chest X-Ray,Radiology,RESULT ENTRY,True

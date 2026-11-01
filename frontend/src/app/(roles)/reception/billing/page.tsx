@@ -1,12 +1,48 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Search, Calendar, Scan, FileText, ChevronDown } from "lucide-react";
+import { fetchInvoices, createInvoice } from "@/services/api";
 
 export default function BillingDashboard() {
+  const [invoices, setInvoices] = useState<any[]>([]);
+  const [uhid, setUhid] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    loadRecentInvoices();
+  }, []);
+
+  async function loadRecentInvoices() {
+    const data = await fetchInvoices();
+    // Reverse the array so the newest invoices appear at the top of the sidebar
+    setInvoices(Array.isArray(data) ? data.reverse().slice(0, 5) : []);
+  }
+
+  const handlePayment = async () => {
+    if (!uhid) {
+      alert("Please enter a Patient UHID (e.g., UHID-7265)");
+      return;
+    }
+    
+    setIsSubmitting(true);
+    // Submits the static cart total to the backend
+    const res = await createInvoice({ uhid, amount: 892.50 });
+    
+    if (res?.status === "success") {
+      setUhid("");
+      loadRecentInvoices(); // Instantly fetch and display the new invoice in the sidebar
+    } else {
+      alert("Error saving invoice to database.");
+    }
+    setIsSubmitting(false);
+  };
+
+  const today = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
   return (
     <div className="w-full px-6 py-6 md:px-8 max-w-[1600px] mx-auto space-y-6 text-[#2B2B2B]">
       
-      {/* ================= HEADER ================= */}
       <div className="flex flex-col pb-4 border-b border-[#EAEAEA]">
         <h1 className="text-2xl font-bold text-[#1F1A67] tracking-tight">Billing & Invoicing</h1>
         <p className="text-[14px] text-[#6F6B7D] mt-1">
@@ -14,7 +50,6 @@ export default function BillingDashboard() {
         </p>
       </div>
 
-      {/* ================= MAIN LAYOUT ================= */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Left Column: Invoice Form */}
@@ -27,13 +62,15 @@ export default function BillingDashboard() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
               <div>
                 <label className="block text-[11px] font-bold text-[#00A3E0] uppercase tracking-wider mb-2">
-                  Select Patient
+                  Patient UHID
                 </label>
                 <div className="relative">
                   <Search className="w-4 h-4 text-[#6F6B7D] absolute left-3 top-1/2 transform -translate-y-1/2" />
                   <input 
                     type="text" 
-                    placeholder="Search UHID or Name..." 
+                    value={uhid}
+                    onChange={(e) => setUhid(e.target.value)}
+                    placeholder="e.g. UHID-7265" 
                     className="w-full pl-9 pr-4 py-2.5 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-[13px] text-[#2B2B2B] focus:outline-none focus:border-[#1F1A67] focus:ring-1 focus:ring-[#1F1A67] transition-colors placeholder:text-[#6F6B7D]/70" 
                   />
                 </div>
@@ -46,7 +83,7 @@ export default function BillingDashboard() {
                   <Calendar className="w-4 h-4 text-[#6F6B7D] absolute left-3 top-1/2 transform -translate-y-1/2" />
                   <input 
                     type="text" 
-                    value="04/09/2026" 
+                    value={today} 
                     readOnly 
                     className="w-full pl-9 pr-4 py-2.5 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-[13px] text-[#6F6B7D] outline-none cursor-default" 
                   />
@@ -69,8 +106,8 @@ export default function BillingDashboard() {
                 <tbody className="divide-y divide-[#EAEAEA]">
                   <tr className="hover:bg-[#F7F8FC] transition-colors">
                     <td className="py-4 px-4">
-                      <div className="font-bold text-[#2B2B2B] text-[14px]">OPD Consultation – Dr. Doe</div>
-                      <div className="text-[12px] text-[#6F6B7D] mt-0.5">Cardiology Department</div>
+                      <div className="font-bold text-[#2B2B2B] text-[14px]">OPD Consultation</div>
+                      <div className="text-[12px] text-[#6F6B7D] mt-0.5">General Department</div>
                     </td>
                     <td className="py-4 px-4 text-center font-bold text-[#2B2B2B]">1</td>
                     <td className="py-4 px-4 text-right font-bold text-[#2B2B2B]">500.00</td>
@@ -140,43 +177,43 @@ export default function BillingDashboard() {
                 </div>
               </div>
 
-              <button className="w-full py-3 bg-[#1F1A67] text-[#FFFFFF] font-bold rounded-md hover:bg-[#3B3486] transition-colors shadow-sm text-[13px] focus:outline-none">
-                Print Invoice
+              <button 
+                onClick={handlePayment}
+                disabled={isSubmitting}
+                className="w-full py-3 bg-[#1F1A67] text-[#FFFFFF] font-bold rounded-md hover:bg-[#3B3486] transition-colors shadow-sm text-[13px] focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Processing..." : "Process Payment & Print"}
               </button>
             </div>
           </div>
 
+          {/* Dynamic Recent Invoices */}
           <div className="bg-[#FFFFFF] rounded-lg border border-[#EAEAEA] shadow-sm flex flex-col">
             <div className="p-5 border-b border-[#EAEAEA]">
               <h3 className="text-[14px] font-bold text-[#1F1A67] uppercase tracking-wider">Recent Invoices</h3>
             </div>
             
             <div className="p-5 space-y-3">
-              <div className="flex justify-between items-center p-3 border border-[#EAEAEA] rounded-md hover:bg-[#F7F8FC] hover:border-[#1F1A67]/30 transition-colors cursor-pointer group">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[#F4F0F8] rounded-md flex items-center justify-center text-[#1F1A67] shrink-0 border border-[#EAEAEA]">
-                    <FileText className="w-4 h-4" />
+              {invoices.length === 0 ? (
+                <div className="text-[12px] text-[#6F6B7D] text-center py-4">No recent invoices</div>
+              ) : (
+                invoices.map((inv, idx) => (
+                  <div key={idx} className="flex justify-between items-center p-3 border border-[#EAEAEA] rounded-md hover:bg-[#F7F8FC] hover:border-[#1F1A67]/30 transition-colors cursor-pointer group">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-[#F4F0F8] rounded-md flex items-center justify-center text-[#1F1A67] shrink-0 border border-[#EAEAEA]">
+                        <FileText className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-[#1F1A67] text-[13px]">{inv.id}</div>
+                        <div className="text-[11px] text-[#6F6B7D] mt-0.5 uppercase tracking-wider font-medium">
+                          {inv.patient} <span className="mx-1 lowercase">•</span> ₹{inv.amount.toFixed(2)}
+                        </div>
+                      </div>
+                    </div>
+                    <span className="text-[#6F6B7D] group-hover:text-[#00A3E0] font-bold transition-colors">&gt;</span>
                   </div>
-                  <div>
-                    <div className="font-bold text-[#1F1A67] text-[13px]">INV-2094</div>
-                    <div className="text-[11px] text-[#6F6B7D] mt-0.5 uppercase tracking-wider font-medium">John Doe <span className="mx-1 lowercase">•</span> ₹1,200.00</div>
-                  </div>
-                </div>
-                <span className="text-[#6F6B7D] group-hover:text-[#00A3E0] font-bold transition-colors">&gt;</span>
-              </div>
-
-              <div className="flex justify-between items-center p-3 border border-[#EAEAEA] rounded-md hover:bg-[#F7F8FC] hover:border-[#1F1A67]/30 transition-colors cursor-pointer group">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[#F4F0F8] rounded-md flex items-center justify-center text-[#1F1A67] shrink-0 border border-[#EAEAEA]">
-                    <FileText className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-[#1F1A67] text-[13px]">INV-2093</div>
-                    <div className="text-[11px] text-[#6F6B7D] mt-0.5 uppercase tracking-wider font-medium">Sarah J. <span className="mx-1 lowercase">•</span> ₹850.00</div>
-                  </div>
-                </div>
-                <span className="text-[#6F6B7D] group-hover:text-[#00A3E0] font-bold transition-colors">&gt;</span>
-              </div>
+                ))
+              )}
             </div>
           </div>
 

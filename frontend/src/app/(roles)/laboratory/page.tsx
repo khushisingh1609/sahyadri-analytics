@@ -1,47 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TestTube, Search } from "lucide-react";
 import { LabQueue } from "@/components/features/laboratory/LabQueue";
+import { fetchLabRequests } from "@/services/api";
+import { OutbreakAlert } from "@/app/(roles)/shared/OutbreakAlert";
 
 export default function LaboratoryDashboard() {
   const [activeTab, setActiveTab] = useState<"pending" | "published">("pending");
+  const [tests, setTests] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Preserved mock data structure
-  const tests = [
-    { 
-      id: "REQ-9012", 
-      patient: "Michael Chen", 
-      doctor: "REQ: DR. DOE", 
-      details: "Complete Blood Count (CBC)", 
-      category: "Pathology", 
-      status: "SAMPLE REQUIRED", 
-      urgent: false 
-    },
-    { 
-      id: "REQ-9013", 
-      patient: "James Wilson", 
-      doctor: "REQ: DR. DOE", 
-      details: "Lipid Panel", 
-      category: "Pathology", 
-      status: "PROCESSING", 
-      urgent: false 
-    },
-    { 
-      id: "REQ-9014", 
-      patient: "Sarah Jenkins", 
-      doctor: "REQ: DR. SMITH", 
-      details: "Chest X-Ray", 
-      category: "Radiology", 
-      status: "RESULT ENTRY", 
-      urgent: true 
-    },
-  ];
+  // Fetch live lab requests from FastAPI on mount
+  useEffect(() => {
+    async function loadLabData() {
+      const data = await fetchLabRequests();
+      setTests(data);
+      setIsLoading(false);
+    }
+    loadLabData();
+  }, []);
 
   const handleAction = (id: string, currentStatus: string) => {
-    // Preserved callback functionality
     console.log(`Action triggered for Request: ${id} with Status: ${currentStatus}`);
   };
+
+  // Dynamically calculate KPIs from database
+  const samplesNeeded = tests.filter(t => t.status === "SAMPLE REQUIRED").length;
+  const processingCount = tests.filter(t => t.status === "PROCESSING").length;
+  const urgentCount = tests.filter(t => t.urgent === true).length;
+  const completedCount = tests.filter(t => t.status === "RESULT ENTRY").length; // You can adjust this to "COMPLETED" later
 
   return (
     <div className="w-full px-6 py-6 md:px-8 max-w-[1600px] mx-auto space-y-6 text-[#2B2B2B]">
@@ -78,24 +66,23 @@ export default function LaboratoryDashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <div className="bg-[#FFFFFF] p-5 rounded-lg border border-[#EAEAEA] shadow-sm flex flex-col justify-between">
           <span className="text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-2">Samples Needed</span>
-          <span className="text-3xl font-bold text-[#1F1A67] tracking-tight">18</span>
+          <span className="text-3xl font-bold text-[#1F1A67] tracking-tight">{String(samplesNeeded).padStart(2, '0')}</span>
         </div>
 
         <div className="bg-[#FFFFFF] p-5 rounded-lg border border-[#EAEAEA] shadow-sm flex flex-col justify-between">
           <span className="text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-2">Processing</span>
-          <span className="text-3xl font-bold text-[#1F1A67] tracking-tight">24</span>
+          <span className="text-3xl font-bold text-[#1F1A67] tracking-tight">{String(processingCount).padStart(2, '0')}</span>
         </div>
 
         <div className="bg-[#FFFFFF] p-5 rounded-lg border border-[#EAEAEA] shadow-sm flex flex-col justify-between relative overflow-hidden">
-          {/* Urgent subtle indicator stripe */}
           <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#C61A4C]"></div>
           <span className="text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-2 ml-1">Urgent Requests</span>
-          <span className="text-3xl font-bold text-[#C61A4C] tracking-tight ml-1">05</span>
+          <span className="text-3xl font-bold text-[#C61A4C] tracking-tight ml-1">{String(urgentCount).padStart(2, '0')}</span>
         </div>
 
         <div className="bg-[#FFFFFF] p-5 rounded-lg border border-[#EAEAEA] shadow-sm flex flex-col justify-between">
           <span className="text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-2">Completed (Today)</span>
-          <span className="text-3xl font-bold text-[#1F1A67] tracking-tight">86</span>
+          <span className="text-3xl font-bold text-[#1F1A67] tracking-tight">{String(completedCount).padStart(2, '0')}</span>
         </div>
       </div>
 
@@ -138,16 +125,20 @@ export default function LaboratoryDashboard() {
 
         {/* 5. RENDER QUEUE COMPONENT */}
         <div className="bg-[#FFFFFF]">
-          {activeTab === "pending" ? (
+          {isLoading ? (
+            <div className="p-12 text-center text-[13px] text-[#6F6B7D]">Loading laboratory queue from database...</div>
+          ) : activeTab === "pending" ? (
             <LabQueue tests={tests} onAction={handleAction} />
           ) : (
             <div className="p-12 text-center text-[13px] text-[#6F6B7D]">
               No published results available yet.
             </div>
           )}
+          <OutbreakAlert/> 
         </div>
 
       </div>
     </div>
   );
+  
 }

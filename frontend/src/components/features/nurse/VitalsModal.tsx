@@ -1,115 +1,106 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, X, Save } from "lucide-react";
+import { X, Activity } from "lucide-react";
+import { saveNurseVitals } from "@/services/api";
 
 interface VitalsModalProps {
-  bedId: string;
+  bed: any; // Pass the full bed object containing the uhid
   onClose: () => void;
 }
 
-export function VitalsModal({ bedId, onClose }: VitalsModalProps) {
-  // Maintained existing default values as requested
+export function VitalsModal({ bed, onClose }: VitalsModalProps) {
   const [bp, setBp] = useState("120/80");
-  const [temp, setTemp] = useState("98.6");
-  const [hr, setHr] = useState("72");
+  const [temperature, setTemperature] = useState("98.6");
+  const [heartRate, setHeartRate] = useState("75");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Preserved the exact submission behavior
-    alert(`Vitals updated successfully for bed ${bedId}`);
+    setIsSubmitting(true);
+
+    // Send the live vitals to FastAPI using the patient's real UHID
+    await saveNurseVitals({
+      uhid: bed.uhid,
+      bp,
+      heartRate,
+      temperature,
+    });
+
+    setIsSubmitting(false);
     onClose();
+    window.location.reload(); // Refresh to reflect changes
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1F1A67]/50 backdrop-blur-sm">
-      <div className="w-full max-w-[440px] bg-[#FFFFFF] rounded-lg shadow-xl border border-[#EAEAEA] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-        
-        {/* ================= MODAL HEADER ================= */}
-        <div className="px-6 py-5 border-b border-[#EAEAEA] flex justify-between items-start bg-[#FFFFFF]">
-          <div className="flex gap-4 items-center">
-            <div className="w-10 h-10 rounded-md bg-[#F4F0F8] flex items-center justify-center shrink-0 border border-[#EAEAEA]">
-              <Activity className="w-5 h-5 text-[#1F1A67]" />
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg max-w-md w-full p-6 shadow-xl border border-[#EAEAEA] space-y-5">
+        <div className="flex justify-between items-center border-b border-[#EAEAEA] pb-3">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded bg-[#F4F0F8] flex items-center justify-center text-[#1F1A67]">
+              <Activity className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-[18px] font-bold text-[#1F1A67] tracking-tight">Record Vitals</h2>
-              <p className="text-[13px] font-semibold text-[#6F6B7D] mt-0.5">
-                Bed: <span className="text-[#00A3E0] uppercase tracking-wider">{bedId}</span>
-              </p>
+              <h3 className="text-base font-bold text-[#1F1A67]">Record Vitals</h3>
+              <p className="text-xs text-[#6F6B7D]">Bed: {bed.id} | Patient: {bed.patient}</p>
             </div>
           </div>
-          <button 
-            onClick={onClose} 
-            className="p-1.5 text-[#6F6B7D] hover:bg-[#F7F8FC] hover:text-[#C61A4C] rounded-md transition-colors focus:outline-none"
-            aria-label="Close modal"
-          >
+          <button onClick={onClose} className="text-[#6F6B7D] hover:text-[#1F1A67]">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* ================= MODAL BODY / FORM ================= */}
-        <form onSubmit={handleSubmit} className="p-6">
-          <div className="space-y-5">
-            <div>
-              <label className="block text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-1.5">
-                Blood Pressure (mmHg)
-              </label>
-              <input
-                type="text"
-                required
-                value={bp}
-                onChange={(e) => setBp(e.target.value)}
-                className="w-full px-4 py-2.5 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-[14px] text-[#2B2B2B] focus:outline-none focus:border-[#1F1A67] focus:ring-1 focus:ring-[#1F1A67] transition-all"
-                placeholder="e.g. 120/80"
-              />
-            </div>
-            <div>
-              <label className="block text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-1.5">
-                Temperature (°F)
-              </label>
-              <input
-                type="text"
-                required
-                value={temp}
-                onChange={(e) => setTemp(e.target.value)}
-                className="w-full px-4 py-2.5 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-[14px] text-[#2B2B2B] focus:outline-none focus:border-[#1F1A67] focus:ring-1 focus:ring-[#1F1A67] transition-all"
-                placeholder="e.g. 98.6"
-              />
-            </div>
-            <div>
-              <label className="block text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-1.5">
-                Heart Rate (BPM)
-              </label>
-              <input
-                type="text"
-                required
-                value={hr}
-                onChange={(e) => setHr(e.target.value)}
-                className="w-full px-4 py-2.5 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-[14px] text-[#2B2B2B] focus:outline-none focus:border-[#1F1A67] focus:ring-1 focus:ring-[#1F1A67] transition-all"
-                placeholder="e.g. 72"
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-1">Blood Pressure (mmHg)</label>
+            <input 
+              type="text" 
+              value={bp} 
+              onChange={(e) => setBp(e.target.value)} 
+              className="w-full p-3 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-sm text-[#2B2B2B] focus:outline-none focus:border-[#00A3E0]" 
+              required
+            />
           </div>
 
-          {/* ================= MODAL FOOTER ================= */}
-          <div className="mt-8 flex items-center justify-end gap-3 pt-5 border-t border-[#EAEAEA]">
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-5 py-2.5 text-sm font-medium text-[#6F6B7D] bg-[#FFFFFF] border border-[#EAEAEA] rounded-md hover:bg-[#F7F8FC] hover:text-[#1F1A67] transition-colors focus:outline-none"
+          <div>
+            <label className="block text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-1">Temperature (°F)</label>
+            <input 
+              type="text" 
+              value={temperature} 
+              onChange={(e) => setTemperature(e.target.value)} 
+              className="w-full p-3 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-sm text-[#2B2B2B] focus:outline-none focus:border-[#00A3E0]" 
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-[11px] font-bold text-[#6F6B7D] uppercase tracking-wider mb-1">Heart Rate (bpm)</label>
+            <input 
+              type="text" 
+              value={heartRate} 
+              onChange={(e) => setHeartRate(e.target.value)} 
+              className="w-full p-3 bg-[#F7F8FC] border border-[#EAEAEA] rounded-md text-sm text-[#2B2B2B] focus:outline-none focus:border-[#00A3E0]" 
+              required
+            />
+          </div>
+
+          <div className="flex justify-end gap-3 pt-3 border-t border-[#EAEAEA]">
+            <button 
+              type="button" 
+              onClick={onClose} 
+              className="px-4 py-2 border border-[#EAEAEA] text-sm font-medium rounded-md text-[#6F6B7D] hover:bg-[#F7F8FC]"
             >
               Cancel
             </button>
-            <button
-              type="submit"
-              className="px-5 py-2.5 text-sm font-medium text-[#FFFFFF] bg-[#1F1A67] hover:bg-[#3B3486] rounded-md flex items-center transition-colors shadow-sm focus:outline-none"
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="px-5 py-2 bg-[#1F1A67] text-white text-sm font-medium rounded-md hover:bg-[#3B3486] transition-colors shadow-sm"
             >
-              <Save className="w-4 h-4 mr-2" />
-              Save Vitals Log
+              {isSubmitting ? "Saving..." : "Save Vitals Log"}
             </button>
           </div>
         </form>
-
       </div>
     </div>
   );
